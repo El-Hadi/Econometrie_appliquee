@@ -1,5 +1,7 @@
 open @workdir/../Téléchargements/chapitre02.xls
 
+
+#Probème 2.1
 gnuplot txi7098 txs7098 --output=display
 
 ols txi7098 const txs7098
@@ -24,3 +26,54 @@ ols txi8089 const txs8089
 ols txi9098 const txs9098
 
 ols txi7074 const txs7074
+
+
+#Problème 2.2
+
+ols txi7098 const txsprive7098 txspub7098
+
+restrict 
+    b[2]-b[3]=0
+    
+end restrict
+
+
+ols txi7079 const txsprive7079 txspub7079
+
+ols txi8089 const txsprive8089 txspub8089
+
+ols txi9098 const txsprive9098 txspub9098
+
+
+
+#2
+
+ols txi9098 const txsprive9098
+
+series res1=$uhat
+
+ols txspub9098 const txsprive9098
+
+series res2=$uhat
+
+ols res1 const res2
+
+
+varlist --type=accessor
+
+
+#Problème 2.3
+
+ols dc7098 const txs7098
+
+restrict 
+     b[2]=1
+end restrict
+
+
+ols dc7098 const txsprive7098 txspub7098
+
+restrict
+    b[2]-b[3]=0
+
+end restrict
