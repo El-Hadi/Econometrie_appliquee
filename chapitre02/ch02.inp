@@ -1,0 +1,26 @@
+open @workdir/../Téléchargements/chapitre02.xls
+
+gnuplot txi7098 txs7098 --output=display
+
+ols txi7098 const txs7098
+
+restrict
+    b[2]=1
+end restrict
+
+#varlist --type=accessor
+
+smpl 1 15
+
+ols txi7098 const txs7098
+
+smpl full
+
+
+ols txi7079 const txs7079
+
+ols txi8089 const txs8089
+
+ols txi9098 const txs9098
+
+ols txi7074 const txs7074

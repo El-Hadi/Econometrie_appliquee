@@ -1,0 +1,38 @@
+cal
+all 19
+open data "/home/hadi/Téléchargements/chapitre02.xls"
+data(format=xls, org=obs)
+print
+
+table
+/*probleme 2.1 */
+scatter
+# txi7098 txs7098
+
+linreg txi7098
+# constant txs7098
+
+restrict 1
+# 2
+# 1 1
+
+
+smpl 1 15
+
+linreg txi7098
+# constant txs7098
+
+smpl 1 19
+
+linreg txi7079
+#constant txs7079
+
+linreg txi8089
+#constant txs8089
+
+linreg txi9098
+#constant txs9098
+
+linreg txi7074
+#constant txs7074
+
